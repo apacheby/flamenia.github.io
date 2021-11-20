@@ -1,0 +1,809 @@
+input, textarea {
+    font-family: 'Roboto Condensed';
+    border: none;
+}
+
+input[type="submit"] {
+    padding: 0.2em;
+    font-weight: bold;
+}
+
+select {
+    border: none;
+    font-family: 'Roboto Condensed';
+}
+
+ul {
+    list-style: ' ‐‐ ';
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto Condensed';
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+strong {
+    font-weight: 900;
+}
+
+nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0.6em 0;
+}
+
+nav li {
+    list-style: none;
+    margin: 0 1em;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.error h1, .action-page h1 {
+    font-size: 200%;
+}
+
+.home {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.site-name {
+    font-family: 'Oswald';
+    font-size: 3em;
+    margin-bottom: 0.2em;
+    text-align: center;
+}
+
+.site-description {
+    margin: 2em auto;
+    padding: 0 3em;
+    text-align: center;
+}
+
+.recent {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.recent .recent-posts {
+    max-width: 300px;
+}
+
+.recent .recent-posts, .recent .recent-files {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 1em 3em;
+    overflow: hidden;
+}
+
+.recent .recent-posts .post-preview, .recent .recent-files .file-preview {
+    align-self: flex-start;
+    max-width: 100%;
+}
+
+.file-preview .post-image {
+    float: none;
+    margin: 0.4em 0;
+}
+
+.post-preview .thread-subject {
+    font-weight: bold;
+}
+
+.post-preview .body-contents {
+    padding-left: 2em;
+    margin: 0.4em 0;
+    box-sizing: border-box;
+}
+
+.page-header {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.banner {
+    margin: 1em;
+    max-width: 100%;
+}
+
+.page-header .board-name, .page-header .board-description {
+    font-family: 'Oswald';
+    text-align: center;
+}
+
+.page-header .board-name {
+    margin-top: 0.4em;
+    margin-bottom: 0.8em;
+}
+
+.page-header .board-description {
+    margin-top: 0;
+}
+
+.form-help {
+    max-width: 700px;
+    margin-bottom: 3em;
+}
+
+.form-help h1 {
+    font-size: 2.5em;
+}
+
+.form-help h2 {
+    text-decoration: underline;
+}
+
+.form-help dt {
+    font-weight: bold;
+}
+
+.form-help dd {
+    margin-bottom: 1em;
+}
+
+.form-help .example {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 1em;
+    align-items: center;
+}
+
+.form-help .example-input {
+    padding-left: 1em;
+}
+
+.form-help .example-output {
+    width: 100%;
+    padding: 0.4em;
+    box-sizing: border-box;
+}
+
+.new-item-form {
+    margin: 1em auto 2em;
+    padding: 0.6em;
+    display: grid;
+    grid-template-columns: 6em auto;
+    width: 25em;
+    grid-gap: 0.2em;
+}
+
+@media (max-width: 400px) {
+    .new-item-form {
+        max-width: 85%;
+    }
+
+    .new-item-form input, .new-item-form textarea, .new-item-form select {
+        width: calc(100% - 1.2em);
+    }
+}
+
+.new-item-form label {
+    align-self: center;
+}
+
+.new-item-form label.divider {
+    grid-column: 1 / span 2;
+    border-bottom: thin solid black;
+    margin: 0.4em 0 0.8em;
+}
+
+.new-item-form textarea {
+    grid-column: 1 / span 2;
+    height: 16em;
+}
+
+.new-item-form input, .new-item-form textarea {
+    margin: 0.2em 0;
+    padding: 0.2em 0.4em;
+}
+
+.new-item-form select {
+    margin: 0.4em 0;
+    padding: 0.2em 0.4em;
+}
+
+.new-item-form input[type=submit], .new-item-form input[type=file] {
+    grid-column: 1 / span 2;
+}
+
+.new-item-form input[type=checkbox] {
+    justify-self: flex-start;
+    border: 0;
+}
+
+.new-item-form aside {
+    grid-column: 1 / span 2;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.notice {
+    margin: 1em 0 -1em;
+
+    align-self: stretch;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.thread {
+    margin: 1em 0;
+    padding: 1em 1em 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+}
+
+@media (min-width: 900px) {
+    .thread {
+        min-width: 900px;
+    }
+}
+
+.thread > header {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.thread > header a {
+    text-decoration: none;
+}
+
+.thread > header .subject {
+    font: bold 1em 'Oswald';
+    padding: 0.4em;
+    margin: 1em;
+}
+
+.thread-pin, .thread-lock {
+    margin: auto 0.4em;
+    vertical-align: center;
+}
+
+.thread .post:first-of-type {
+    background: none;
+    border: none;
+    align-self: stretch;
+    box-shadow: none;
+    min-width: 100%;
+}
+
+.post {
+    padding: 0.4em;
+    margin: 0.4em 0;
+    line-height: 1.45;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.post-info {
+    font-size: 0.9em;
+}
+
+.post-info * {
+    margin: 0 0.7em;
+}
+
+.post-info .post-ident {
+    margin: 0;
+}
+
+.post-info :first-child, .post-info :last-child {
+    margin: 0;
+}
+
+.post-author, .post-timestamp::before {
+    content: "Posted on ";
+}
+
+.post-author, .post-timestamp {
+    opacity: 0.5;
+}
+
+.post-id {
+    margin-left: auto;
+}
+
+.post .body {
+    box-sizing: border-box;
+    margin: 0.4em;
+}
+
+.body-contents {
+    width: max-content;
+    max-width: 100%;
+}
+
+.body-contents > :first-child {
+    margin-top: 0;
+}
+
+.body-contents > :last-child {
+    margin-bottom: 0;
+}
+
+.body-contents ul, .body-contents ol {
+    /* So that padding is respected when next to a floating image. */
+    overflow: hidden;
+}
+
+.body-contents .post-ref::before {
+    content: ">>";
+}
+
+.body-contents blockquote p::before {
+    content: ">";
+}
+
+.body-contents pre.blockcode {
+    overflow-x: auto;
+    line-height: 1.3;
+}
+
+.body-contents pre.blockcode code {
+    display: block;
+    padding: 0.4em 0.6em;
+    margin: 0;
+}
+
+.body-contents h3 {
+    text-transform: uppercase;
+}
+
+.body-contents * {
+    margin: 0.5em 0;
+}
+
+.post-image {
+    display: flex;
+    flex-flow: column nowrap;
+
+    margin-right: 1em;
+    margin-bottom: 1em;
+
+    position: relative;
+
+    float: left;
+}
+
+.post-image .file-thumb {
+    margin-bottom: 0.8em;
+}
+
+.post-image img, .post-image video {
+    max-width: 100%;
+    max-height: 100vh;
+}
+
+.post-image img[data-expanding] {
+    filter: grayscale(1) brightness(0.5);
+}
+
+.post-image .video-close {
+    display: block;
+    margin: 0.2em 0;
+    z-index: 1;
+}
+
+.post-image .file-name {
+    font-size: 0.75em;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    max-width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-image.spoiler img {
+    cursor: help;
+    width: 200px;
+    height: 200px;
+}
+
+.post-fixed {
+    position: fixed;
+}
+
+.post .actions {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    clear: both;
+}
+
+.post-action:first-child {
+    margin-left: auto;
+}
+
+a.post-action {
+    text-decoration: none;
+}
+
+a.post-action, form.post-action > * {
+    margin: 0 0.4em;
+    font-size: 0.8em;
+}
+
+.post .actions .post-action:last-child {
+    margin-right: 0;
+}
+
+form.post-action input[type=submit] {
+    font-weight: normal;
+    font-family: 'Roboto Condensed';
+    background: none;
+    padding: 0;
+}
+
+form.post-action input[type=submit]:hover {
+    cursor: pointer;
+}
+
+.action-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.action-form {
+    display: grid;
+    grid-template-columns: 6em auto;
+    grid-gap: 0.5em;
+}
+
+.action-form textarea {
+    padding: 0.2em;
+    height: 4em;
+}
+
+.action-form textarea, .action-form input[type=submit] {
+    grid-column: 1 / 3;
+}
+
+.action-page .post {
+    margin-bottom: 3em;
+    align-self: center;
+}
+
+.board {
+    min-width: 100%;
+}
+
+.board .page-nums {
+    margin: 0 auto;
+    width: max-content;
+
+    padding: 0.4em;
+}
+
+.board .page-num-link {
+    margin: 0 0.4em;
+}
+
+.board .page-num-link.current::before {
+    content: "[";
+}
+
+.board .page-num-link.current::after {
+    content: "]";
+}
+
+.catalog {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.catalog-item {
+    width: 180px;
+    max-height: 300px;
+    margin: 0.4em;
+    padding: 0.6em;
+
+    text-align: center;
+
+    overflow-y: auto;
+}
+
+.catalog-item img {
+    max-width: calc(180px - 2em);
+    max-height: 140px;
+}
+
+@media (max-width: 600px) {
+    .catalog-item {
+        width: 120px;
+        max-height: 200px;
+    }
+
+    .catalog-item img {
+        max-width: 120px;
+        max-height: 90px;
+    }
+}
+
+.catalog-item .item-stats {
+    font-weight: 900;
+}
+
+.catalog-item a {
+    text-decoration: none;
+}
+
+.catalog-item .subject {
+    margin: 0.5em 0;
+    word-wrap: anywhere;
+    font-size: 1em;
+    margin-top: 2em;
+}
+
+.user-options-form {
+    margin: 2em auto 1em;
+    padding: 0.6em;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    max-width: 25em;
+    grid-gap: 0.2em;
+    overflow: hidden;
+}
+
+.user-options-form label, .user-options-form input {
+    align-self: center;
+}
+
+.user-options-form label {
+    margin-right: 0.8em;
+}
+
+.user-options-form input {
+    margin: 0.2em 0;
+    padding: 0.2em 0.4em;
+}
+
+.user-options-form input[type="checkbox"] {
+    height: 1em;
+}
+
+.user-options-form input[type="submit"] {
+    grid-column: 1 / 3;
+}
+
+.user-options-form h2 {
+    grid-column: 1 / 3;
+    text-align: center;
+    font-size: 1.4em;
+    margin-top: 0;
+}
+
+.user-options-form .cookies-notice {
+    grid-column: 1 / 3;
+    margin: 1em auto;
+    max-width: 25em;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.staff-page {
+    margin: 2em auto;
+    max-width: 900px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.staff-page h1 {
+    width: max-content;
+}
+
+.staff-login-page {
+    align-items: center;
+}
+
+.staff-login-form {
+    width: max-content;
+    display: grid;
+    grid-template-columns: 5em 10em;
+    grid-gap: 0.4em;
+}
+
+.staff-login-form input[type="submit"] {
+    grid-column: 1 / 3;
+}
+
+.overview-header {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overview-header h1 {
+    margin-bottom: 2em;
+}
+
+.overview-header .login-actions {
+    margin-left: auto;
+    margin-bottom: 2em;
+}
+
+.overview-header .login-actions > * {
+    margin: 0 0.4em;
+}
+
+.overview-item {
+    margin: 1em 1em;
+    padding: 1em 0;
+}
+
+.report-table, .board-table, .user-table, .action-table {
+    display: grid;
+    grid-gap: 0.4em 1em;
+}
+
+.report-table {
+    grid-template-columns: min-content max-content auto min-content;
+}
+
+.board-table {
+    grid-template-columns: max-content auto;
+}
+
+.user-table {
+    grid-template-columns: min-content auto max-content max-content max-content;
+}
+
+.action-table {
+    grid-template-columns: min-content max-content auto auto max-content;
+}
+
+.table-header {
+    font-weight: bold;
+}
+
+.user-hash {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-note {
+    grid-column: 1 / 5;
+    font-style: italic;
+    margin-top: -0.2em;
+    margin-bottom: 0.2em;
+}
+
+.overview-action {
+    display: grid;
+    padding: 0.8em;
+    margin-top: 0.8em;
+    grid-gap: 0.5em 1em;
+    grid-template-columns: 7em auto 10em;
+    border-radius: 4px;
+}
+
+.overview-action h2 {
+    font: 1em 'Oswald';
+    text-align: center;
+    grid-row: 1;
+    grid-column: 1 / 4;
+    margin: 0 0 0.4em;
+}
+
+.overview-action input[type="number"] {
+    width: 100%;
+}
+
+.overview-action label {
+    grid-column: 1;
+}
+
+.overview-action input {
+    grid-column: 2;
+}
+
+.overview-action input[type="submit"] {
+    grid-column: 3;
+}
+
+@media (max-width: 400px) {
+    .overview-action {
+        grid-template-columns: 7em auto;
+    }
+
+    .overview-action input {
+        width: 100%;
+    }
+
+    .overview-action h2 {
+        grid-column: 1 / 3;
+    }
+
+    .overview-action input[type="submit"] {
+        grid-column: 1 / 3;
+    }
+}
+
+.page-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 100%;
+}
+
+.page-body {
+    margin: 0 auto;
+
+    max-width: 900px;
+
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+@media (max-width: 900px) {
+    .page-body {
+        max-width: 100vw;
+    }
+}
+
+.page-footer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    height: 100px;
+    margin-top: auto;
+
+    padding: 1em;
+
+    box-sizing: border-box;
+}
+
+.page-footer .footer-link {
+    text-transform: uppercase;
+
+    font: bold 1em 'Roboto Condensed';
+    text-decoration: none;
+}
+
+.page-footer ul {
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    list-style: none;
+}
+
+.page-footer li {
+    margin: 0 0.6em;
+}
+
+.page-footer .version {
+    font: 0.8em 'Roboto Condensed';
+    margin-left: auto;
+}

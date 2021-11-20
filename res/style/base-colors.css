@@ -1,0 +1,196 @@
+a {
+    color: var(--bright-color);
+}
+
+input[type="submit"] {
+    color: var(--form-submit-text-color);
+    background-color: var(--form-submit-background-color);
+}
+
+input[type="submit"]:hover {
+    background-color: var(--form-submit-hover-color);
+}
+
+body {
+    color: var(--text-color);
+}
+
+.form-help .example-input {
+    border-left: thick solid var(--shadow-color);
+}
+
+.form-help .example-output {
+    background-color: var(--background-color);
+    border: thin solid var(--border-color);
+}
+
+.new-item-form {
+    background-color: var(--background-color);
+    border: thin solid var(--border-color);
+    box-shadow: 5px 5px 0px var(--shadow-color);
+}
+
+.new-item-form select,
+    .new-item-form input[type="text"],
+    .new-item-form input[type="password"],
+    .new-item-form input[type="checkbox"],
+    .new-item-form textarea
+{
+    color: var(--form-item-text-color);
+    border-color: var(--border-color);
+    background-color: var(--form-item-background-color);
+}
+
+.notice {
+    border-top: thin dashed hsl(0, 0%, 15%);
+}
+
+.thread {
+    border-top: thin dashed hsl(0, 0%, 15%);
+}
+
+.thread > header a {
+    color: var(--text-color);
+}
+
+.thread > header .subject {
+    background-color: var(--background-color);
+    border: thin solid var(--border-color);
+    box-shadow: 5px 5px 0px var(--shadow-color);
+}
+
+.thread .post:first-of-type {
+    box-shadow: none;
+}
+
+.post {
+    background-color: var(--background-color);
+    border: thin solid var(--border-color);
+    box-shadow: 5px 5px 0px var(--shadow-color);
+}
+
+.post.highlighted {
+    background-color: var(--background-color-highlight);
+}
+
+.post:target {
+    animation: 1.0s ease-out 0s highlight;
+}
+
+@keyframes highlight {
+    from {
+        background-color: var(--background-color-highlight);
+    }
+
+    to {
+        background-color: var(--background-color);
+    }
+}
+
+.body-contents blockquote {
+    color: var(--quote-color);
+}
+
+.body-contents pre.blockcode {
+    color: var(--form-item-text-color);
+    background-color: var(--form-item-background-color);
+    border: thin solid var(--border-color);
+}
+
+.body-contents .spoiler {
+    padding: 0 0.2em;
+    background-color: black;
+    color: black;
+}
+
+.body-contents .spoiler:hover {
+    color: white;
+}
+
+form.post-action input[type="submit"], a.post-action {
+    color: var(--post-action-color);
+    background: none;
+}
+
+form.post-action input[type="submit"]:hover, a.post-action:hover{
+    color: var(--post-action-hover-color);
+}
+
+form.post-action input[type=text] {
+    color: var(--text-color);
+    background-color: var(--post-action-reason-color);
+}
+
+.post-info .post-ident {
+    color: var(--bright-color);
+}
+
+.post-author, .post-timestamp {
+    opacity: 0.5;
+}
+
+.post .post-id a {
+    color: var(--less-bright-color);
+}
+
+.post .file-name {
+    color: var(--less-bright-color);
+}
+
+.action .post {
+    background-color: var(--background-color)
+    border: thin solid var(--border-color);
+}
+
+.board .page-nums {
+    background-color: var(--background-color);
+    border: thin solid var(--border-color);
+    box-shadow: 5px 5px 0px var(--shadow-color);
+}
+
+.board .page-num-link.current {
+    color: var(--text-color);
+}
+
+.catalog-item {
+    background-color: var(--background-color);
+    border: thin solid var(--border-color);
+}
+
+.post-preview .body {
+    border-left: solid thick var(--shadow-color);
+}
+
+.user-options-form {
+    background-color: var(--background-color);
+    border: thin solid var(--border-color);
+    box-shadow: 5px 5px 0px var(--shadow-color);
+}
+
+.overview-item {
+    border-top: thin dashed var(--border-color);
+}
+
+.table-header {
+    color: var(--dull-color);
+}
+
+.overview-item form {
+    background-color: var(--background-color);
+    border: thin solid var(--border-color);
+}
+
+.page-wrapper {
+    background-image: linear-gradient(var(--background-gradient-start),
+                                      var(--background-gradient-end));
+    background-repeat: no-repeat;
+}
+
+.page-footer {
+    border-top: thin dashed var(--border-color);
+    background-color: var(--footer-background-color);
+}
+
+.page-footer a {
+    color: var(--text-color);
+}

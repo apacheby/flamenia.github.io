@@ -1,0 +1,23 @@
+:root {
+    --bright-color: hsl(0, 100%, 65%);
+    --less-bright-color: hsl(0, 100%, 45%);
+    --dull-color: hsl(0, 0%, 40%);
+    --form-item-text-color: var(--text-color);
+    --form-item-background-color: hsl(0, 0%, 22%);
+    --form-submit-text-color: hsl(0, 0%, 98%);
+    --form-submit-background-color: hsl(0, 100%, 50%);
+    --form-submit-hover-color: hsl(0, 100%, 60%);
+    --form-hover-color: hsl(0, 100%, 60%);
+    --text-color: hsl(0, 0%, 98%);
+    --quote-color: hsl(120, 40%, 55%);
+    --background-color: hsl(0, 0%, 12%);
+    --background-color-highlight: hsl(0, 20%, 24%);
+    --border-color: hsl(0, 0%, 22%);
+    --shadow-color: hsl(0, 0%, 8%);
+    --footer-background-color: black;
+    --background-gradient-start: hsl(10, 10%, 14%);
+    --background-gradient-end: black;
+    --post-action-color: hsl(0, 0%, 50%);
+    --post-action-hover-color: hsl(0, 0%, 70%);
+    --post-action-reason-color: hsl(0, 0%, 20%);
+}
