@@ -1,0 +1,21 @@
+pages_dir: contrib/config/pages
+names: contrib/config/names.txt
+notice: contrib/config/notice.md
+
+allow_uploads: true
+allow_file_types:
+    - image/png
+    - image/jpeg
+    - image/gif
+    - image/webp
+    - image/pnm
+    - image/tiff
+    - video/webm
+    - video/mp4
+    - video/ogg
+
+styles:
+    - blood
+    - nautical
+    - peace
+    - yotsuba

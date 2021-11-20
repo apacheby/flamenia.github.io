@@ -1,0 +1,36 @@
+# Maintainer: set <set@hierophant.club>
+pkgname=longboard-git
+pkgver=r53.d872642
+pkgrel=1
+pkgdesc="An imageboard engine"
+arch=('x86_64')
+url="https://github.com/sethierophant/longboard"
+license=('AGPL3')
+makedepends=('cargo' 'git') # 'bzr', 'git', 'mercurial' or 'subversion'
+provides=("${pkgname%-git}")
+conflicts=("${pkgname%-git}")
+backup=('etc/longboard/config.yaml')
+source=("${pkgname%-git}::git://github.com/sethierophant/longboard")
+md5sums=('SKIP')
+
+makecmd="make prefix=/usr sysconfdir=/etc localstatedir=/var DESTDIR=\"$pkgdir/\""
+
+pkgver() {
+    cd "$srcdir/${pkgname%-git}"
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+check() {
+    cd "$srcdir/${pkgname%-git}"
+    ${makecmd} check
+}
+
+build() {
+    cd "$srcdir/${pkgname%-git}"
+    ${makecmd}
+}
+
+package() {
+    cd "$srcdir/${pkgname%-git}"
+    ${makecmd} install
+}

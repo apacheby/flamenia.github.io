@@ -1,0 +1,167 @@
+.ad l
+.TH longboard 5 2020-04-20
+.SH NAME
+longboard \- imageboard engine
+.SH SYNOPSIS
+.B /etc/longboard/config.yaml
+.SH DESCRIPTION
+The file \fBconfig.yaml\fR contains configuration options for longboard.
+The following options are recognized:
+.TP
+.B site_name
+The site name. This is displayed on the home page.
+.TP
+.B favicon
+The favicon that will be served at /favicon.png. This file should always
+be a PNG.
+.TP
+.B address
+The address to bind to.
+.TP
+.B port
+The port to bind to.
+.TP
+.B log_file
+The log file to use.
+.TP
+.B database_uri
+The database URI to use. This should start with "postgres://" and contains
+information like the username, password, database hostname, and database name.
+.TP
+.B resource_dir
+Where resources (templates, css, javascript, ...) are stored.
+.TP
+.B upload_dir
+Where user-uploaded files are stored.
+.TP
+.B pages_dir
+Where additional pages are stored. If set, this should be a directory of
+markdown files. Any file you add to this directory will be rendered as HTML and
+added to your site. All of the pages from this directory are shown in the
+footer at the bottom of the page.
+.IP
+Typical uses for this option may be to add a rules page, FAQ page, donation
+page, ...
+.IP
+The page named \fBhome.md\fR is special and will be displayed on the home page,
+if it exists.
+.TP
+.B names
+The name list. This should be a plain text file with one name on each line. If
+this option is set, when a user creates a post without a name, one is chosen
+randomly from this file for them.
+.TP
+.B notice
+The site notice. This file should be a markdown file. If this option is set,
+the contents of this file are rendered into HTML and displayed at the top of
+every board/thread page.
+.TP
+.B allow_uploads
+Allow users to upload files.
+.TP
+.B allow_file_types
+The list of allowed file types for uploads. Right now, longboard only supports
+image and video thumbnailing, so e.g. audio files or pdf uploads won't work.
+.TP
+.B file_size_limit
+The maximum file size for user-uploaded files. This value can be a size in
+bytes, or a size with a suffix. The suffix can be K for kibibytes, M for
+mebibytes, or G for gibibytes.
+.TP
+.B rate_limit_same_user
+How long to rate limit posts with the same IP address. When this option is more
+than 0, a user won't be able to make a post if they've already made a post in
+the rate limit duration. For example, if the rate limit is 10 seconds, a user
+will only be able to create a post every 10 seconds.
+.IP
+This option accepts a duration suffixed with S, M, H, or D for seconds,
+minutes, hours, or days.
+.TP
+.B rate_limit_same_content
+Like \fBrate_limit_same_user\fR but instead of rate limiting based on the IP
+address, rate limit based on the post contents. Only checks the contents of the
+post body.
+.TP
+.B filter_rules
+A list of filter rules to filter posts with. Each item in this list should have
+two fields:
+.IP
+.B pattern
+The pattern to match a user's posts with. See
+https://docs.rs/regex/1.3.4/regex/#syntax for valid regex sytax that can be
+used.
+.IP
+.B replace_with
+What to replace the matched text with. This is a fixed string.
+.TP
+.B styles
+A list of style sheets that the user can choose between. If you add STYLE to
+this list, then resource_dir/styles/STYLE.css should exist.
+.TP
+.B allow_list
+A list of IP addresses to allow for posting. This list overrides both
+\fBblock_list\fR and \fBdns_block_list\fR. Useful for troubleshooting.
+.TP
+.B block_list
+A list of IP addresses to block from posting. This list is only checked when users create an anonymous resource like a thread, post, or post report. It is NOT checked for viewing boards or threads or for staff actions.
+.TP
+.B dns_block_list
+A list of DNS block lists to use. Each item should be a DNS zone, like
+rbl.efnetbl.org, and it will be queried like 1.2.3.4.rbl.efnetbl.org to check
+if an IP is in the blocklist.
+.IP
+There are many DNSBLs across the internet for various purposes; most of them
+for stopping e-mail spam. The default config comes with a few sensible ones
+that you might want to use. Make sure that you are allowed to use any DNSBL you
+add to this list.
+.IP
+Like \fBblock_list\fR, these lists are only checked when a user is creating an
+anonymous resource, like a thread, post, or post report.
+.SH EXTENSIONS
+In addition to the configuration options listed above, longboard also supports
+adding profiles to enable using different configurations for different classes
+of users. These configuration profiles are called "extensions".
+.PP
+To create a new extension, create a new YAML file in the configuration
+directory with the name of your extension. You can include the following
+options in this file:
+.IP \[bu] 3
+pages_dir
+.IP \[bu]
+names_path
+.IP \[bu]
+notice_path
+.IP \[bu]
+allow_uploads
+.IP \[bu]
+allow_file_types
+.IP \[bu]
+file_size_limit
+.IP \[bu]
+rate_limit_same_ip
+.IP \[bu]
+rate_limit_same_content
+.IP \[bu]
+filter_rules
+.IP \[bu]
+custom_styles
+.IP \[bu]
+allow_list
+.IP \[bu]
+block_list
+.IP \[bu]
+dns_block_list
+.PP
+These options are equivalent to the options for the global configuration. Any
+options not set will default to the options you set in the global
+configuration.
+.PP
+Longboard will use these extensions if the HTTP header
+\fBX-LONGBOARD-EXTENSION\fR is set. The value of this header is the extension
+name. For example, if the header is set to "\fITor\fR", longboard will load
+additional options from \fI/etc/longboard/tor.yaml\fR. You can set this header
+using a reverse proxy like nginx.
+.SH FILES
+.B /etc/longboard/config.yaml
+.SH SEE ALSO
+longboard(8), longctl(1)
